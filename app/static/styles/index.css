@@ -1,0 +1,12 @@
+h1 {
+    display: block;
+    margin: 10px auto;
+    font-size: x-large;
+    text-align: center;
+}
+
+p {
+    margin: 10px;
+    text-align: justify;
+    color: rgba(0, 0, 0, 0.816);
+}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/dashboard.css') }}">
+    <div id="apps_list">
+        <h1>Apps List</h1>
+        <ul>
+            {% for app in apps %}
+            {% if app.status == True %}
+            <li class="apps green_list">
+                <p>{{ app.name }}</p>
+            {% else %}
+            <li class="apps red_list">
+                <p>{{ app.name }}</p>
+            {% endif %}
+                <form id="delete_app" action="{{ url_for('delete_app', app_name=app.name) }}" method='post'>
+                    {{ form.hidden_tag() }}
+                    {{ form.submit(value='Delete', class_='button red_button') }}
+                </form>
+                <a href="{{ url_for('dashboard', app_name=app.name) }}"><button class="button">Edit</button></a>
+            </li>
+            {% endfor %}                
+        </ul>
+        <a href="{{ url_for('new_app') }}"><button class="button" id="new_app">New</button></a>
+    </div>
+{% endblock content %}

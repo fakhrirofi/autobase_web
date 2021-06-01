@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="nice_container form_border">
+        <form class="full_width float_top" action="" method="post">
+            {{ form.hidden_tag() }}
+            <div class="nice_content">
+                <h1> Credentials </h1>
+                <p>
+                    {{ form.name.label }} <br>
+                    {{ form.name(size=32, class_='input_text') }} <br>
+                    {% for error in form.name.errors %}
+                        <span>[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+        <!-- consumer and secret 's error using consumer error due to the same validation-->
+                <p>
+                    {{ form.consumer.label }} <br>
+                    {{ form.consumer(size=32, class_='input_text') }} <br>
+                    {% for error in form.consumer.errors %}
+                        <span>[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.secret.label }} <br>
+                    {{ form.secret(size=32, class_='input_text') }} <br>
+                    {% for error in form.consumer.errors %}
+                    <span>[{{ error }}]</span>
+                {% endfor %}
+                </p>
+                <p class="switch_container">
+                    {{ form.status.label }}
+                    <!-- Rounded switch -->
+                    <label class="switch">
+                        {{ form.status() }}
+                        <span class="slider round"></span>
+                    </label>                
+                </p>
+            </div>
+            <p>{{ form.submit_update(class_='float_button_right button') }}</p>
+            <p>{{ form.submit_reset(class_='float_button_right button') }}</p>
+        </form>        
+    </div>
+
+{% endblock content %}

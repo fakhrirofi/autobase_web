@@ -1,0 +1,53 @@
+#new_app {
+    float: right;
+    margin: 5px 5px;
+}
+
+#apps_list {
+    border-radius: 20px;
+    background: rgba(161, 175, 179, 0.254);
+    padding: 8px;
+    margin: 20px 20px;
+}
+
+#apps_list h1 {
+    display: inline-block;
+    font-size: x-large;
+    margin: 5px 0px;
+}
+
+#apps_list ul li {
+    border-radius: 10px;
+    margin: 0.5px auto;
+
+}
+
+div br {
+    display: inline-block;
+    margin: 3px 5px;
+}
+
+.apps button, #delete_app {
+    display: inherit;
+    margin: 5px 10px;
+    float: right;
+}
+
+.apps p {
+    display: inherit;
+    margin: 12px;
+}
+
+li.apps {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+li.green_list {
+    background-color: rgba(40, 145, 40, 0.398);
+}
+
+li.red_list {
+    background-color: rgba(146, 49, 49, 0.412);
+}

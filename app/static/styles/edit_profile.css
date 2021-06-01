@@ -1,0 +1,12 @@
+.inline_container {
+    display: inline-block;
+}
+
+.inline_content {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#red_content {
+    background-color: rgba(220, 125, 125, 0.392);
+}

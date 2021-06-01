@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form class="form_border" action="" method="post">
+        <h1>Register</h1>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32, class_='input_text') }}<br>
+            {% for error in form.username.errors %}
+            <span>[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32, class_='input_text') }}<br>
+            {% for error in form.password.errors %}
+            <span>[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32, class_='input_text') }}<br>
+            {% for error in form.password2.errors %}
+            <span>[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.token.label }}<br>
+            {{ form.token(size=32, class_='input_text') }}<br>
+            {% for error in form.token.errors %}
+            <span>[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit(class_='float_button_right button') }}</p>
+    </form>
+{% endblock content %}

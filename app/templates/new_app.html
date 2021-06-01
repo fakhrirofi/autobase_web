@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form class="form_border" action="" method="post">
+        {{ form.hidden_tag() }}
+        <h1> Create New App </h1>
+        <p>
+            {{ form.name.label }} <br>
+            {{ form.name(size=32, class_='input_text') }} <br>
+            {% for error in form.name.errors %}
+                <span>[{{ error }}]</span>
+            {% endfor %}
+        </p>
+<!-- consumer and secret 's error using consumer error due to the same validation-->
+        <p>
+            {{ form.consumer.label }} <br>
+            {{ form.consumer(size=32, class_='input_text') }} <br>
+            {% for error in form.consumer.errors %}
+                <span>[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.secret.label }} <br>
+            {{ form.secret(size=32, class_='input_text') }} <br>
+            {% for error in form.consumer.errors %}
+            <span>[{{ error }}]</span>
+        {% endfor %}
+        </p>
+        <p>{{ form.submit_update(value='Create', class_='float_button_right button') }}</p>
+    </form>
+{% endblock content %}

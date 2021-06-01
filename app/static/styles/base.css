@@ -1,0 +1,276 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Form
+   default
+*/
+
+form {
+    display: block;
+    margin: auto auto;
+}
+form h1, form input, #new_user {
+    display: inline-block;
+    margin: 5px 0px;
+}
+form h1 {
+    font-size: x-large;
+}
+form span {
+    display: inline-block;
+    color: rgba(229, 22, 22, 0.82);
+}
+.form_border {
+    border-radius: 20px;
+    padding: 12px;
+    background: rgba(173, 187, 191, 0.323);
+    margin: auto auto;
+}
+.input_text {
+    border: none;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+/* The switch - the box around the slider (checkbox)
+   default
+*/
+
+.switch {
+    margin: 3px 10px;
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 23px;
+}
+/* Make label to be middle of vertical-position */
+.switch_container {
+    display: inline-block;
+}
+.switch_container label {
+    vertical-align: middle;
+}
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+} 
+input:checked + .slider {
+    background-color: #2196F3;
+} 
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
+}
+/* Rounded sliders */
+.slider.round {
+    border-radius: 27px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* nice flexbox
+   default
+*/
+
+.nice_content {
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    background: rgba(161, 175, 179, 0.254);
+}
+.nice_content h1 {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+.nice_container {
+    display: flex;
+    width: 97%;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    padding: 8px;
+}
+
+/* Please place edit after these css reset to make nice sheet arranges*/
+
+body {
+    background-color: lightblue;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    text-align: center;
+    color: rgb(49, 45, 45);
+    background-color: rgb(144, 188, 202);
+    margin-top: auto;
+    padding: 2px;
+}
+
+p, h1 {
+    color:rgba(0, 0, 0, 0.898);
+}
+
+.navbar {
+    background-color: lightgreen;
+    height: auto;
+    padding: 5px;
+}
+
+.flash {
+    text-align: center;
+    margin: 3px auto;
+    list-style: none;
+}
+
+.navbar a {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-block;
+    margin: 2px 9px;
+}
+
+/* a
+   default
+*/
+
+a {
+    text-decoration: none;
+    color: rgb(96, 70, 141);
+}
+a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+    cursor: pointer;
+}
+a:hover {
+    color: rgb(25, 65, 118);
+}
+a.active {
+    color: rgb(9, 45, 92);
+}
+
+/* Button
+   default
+ */
+
+.button {
+    background-color: #f8f8f2b3;
+    border: none;
+    border-radius: 5px;
+    color: rgb(42, 95, 104);
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0px 2px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #e4e4e4b3;
+}
+.button:active {
+    background-color: #c9d9e1b3;
+}
+.red_button {
+    color: rgba(0, 0, 0, 0.734);
+    background-color: rgba(208, 95, 95, 0.59);
+}
+.red_button:hover {
+    background-color: rgba(208, 95, 95, 0.679);
+}
+.red_button:active {
+    background-color: rgba(208, 95, 95, 0.782);
+}
+
+.full_width {
+    width: 97%;
+}
+
+.float_top {
+    margin-top: 10px;
+}
+
+.float_button_right {
+    float: right;
+}
+.float_button_right input {
+    margin: 0px
+}

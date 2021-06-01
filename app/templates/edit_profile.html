@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/edit_profile.css') }}">
+    <div class="nice_container">
+        <form class="nice_content full_width" action="" method="post">
+            <h1>Edit Profile</h1>
+            {{ profile_form.hidden_tag() }}
+            <p>
+                {{ profile_form.username.label }} <br>
+                {{ profile_form.username(size=32, class_='input_text') }}
+                {% for error in profile_form.username.errors %}
+                    <br>
+                    <span>[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ profile_form.submit_profile(class_='float_button_right button') }}</p>
+        </form>
+        <form class="nice_content full_width" action="" method="post">
+            <h1>Edit Password</h1>
+            {{ password_form.hidden_tag() }}
+            <p>
+                {{ password_form.old_password.label }} <br>
+                {{ password_form.old_password(size=32, class_='input_text') }} <br>
+                {% for error in password_form.old_password.errors %}
+                    <span>[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ password_form.password.label }} <br>
+                {{ password_form.password(size=32, class_='input_text') }} <br>
+                {% for error in password_form.password.errors %}
+                    <span>[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ password_form.password2.label }} <br>
+                {{ password_form.password2(size=32, class_='input_text') }} <br>
+                {% for error in password_form.password2.errors %}
+                    <span>[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ password_form.submit_password(class_='float_button_right button') }}</p>
+        </form>
+        <div class="nice_content full_width" id="red_content">
+            <h1>Danger Zone</h1>
+            <p class="inline_container">
+                <p class="inline_content">Delete Account</p>
+                <p class="inline_content">
+                    <form class="inline_content" action="{{ url_for('delete_user') }}" method="post">
+                        {{ empty_form.hidden_tag() }}
+                        {{ empty_form.submit(class_='button red_button', value='Delete') }}
+                    </form>
+                </p>
+        </div>
+    </div>
+{% endblock content %}

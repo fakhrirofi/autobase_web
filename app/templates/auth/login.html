@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form class="form_border" action="" method="post" novalidate>
+        <h1>Sign In</h1>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }} <br>
+            {{ form.username(size=32, class_='input_text') }} <br>
+            {% for error in form.username.errors %}
+            <span>[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }} <br>
+            {{ form.password(size=32, class_='input_text') }} <br>
+            {% for error in form.password.errors %}
+            <span>[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p id='new_user'>New User? <a href="{{ url_for('register') }}">Click to Register</a></p>
+        <p>{{ form.submit(class_='float_button_right button') }}</p>
+    </form>
+{% endblock content %}
