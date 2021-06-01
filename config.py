@@ -10,3 +10,6 @@ class Config:
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     REGISTER_TOKEN = os.environ.get('REGISTER_TOKEN') or "SECRET123SECRET123"
+
+    if 'postgres:' in SQLALCHEMY_DATABASE_URI:
+        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace('postgres', 'postgresql')

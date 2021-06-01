@@ -31,6 +31,11 @@ class Autobase(db.Model):
     status = db.Column(db.Boolean, default=False)
     consumer = db.Column(db.String(80))
     secret = db.Column(db.String(80))
+    CONSUMER_KEY = db.Column(db.String(80))
+    CONSUMER_SECRET = db.Column(db.String(80))
+    ACCESS_KEY = db.Column(db.String(80))
+    ACCESS_SECRET = db.Column(db.String(80))
+    ENV_NAME = db.Column(db.String(80))
 
     def __repr__(self) -> str:
         return f'<Autobase {self.name}>'

@@ -1,4 +1,11 @@
-import sqlalchemy
+'''Autobase web
+Website to control twitter_autobase bot
+'''
+
+__author__ = 'Fakhri Catur Rofi'
+__license__ = 'Apache-2.0'
+__version__ = '0.1'
+
 from config import Config
 from flask import Flask
 from flask_login import LoginManager
@@ -10,6 +17,9 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
-login.login_view = 'login'
+login.login_view = 'auth.login'
 
-from . import auth, routes, models, errors
+from . import routes, models, errors
+
+from .auth import auth
+app.register_blueprint(auth, url_prefix='/auth')
