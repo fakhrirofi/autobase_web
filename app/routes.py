@@ -17,6 +17,7 @@ from flask_login import (
     login_required,
     logout_user
 )
+import requests
 
 @app.route('/')
 @app.route('/index')
@@ -33,6 +34,11 @@ def edit_profile():
         if profile_form.validate():
             current_user.username = profile_form.username.data
             db.session.commit()
+            # requests.post('twt_autobase_url', json={
+            #         'action':'edit-profile',
+            #         'username':current_user.username
+            #     }
+            # )
             flash('Your profile change has been saved')
             return redirect(url_for('edit_profile'))
         else:

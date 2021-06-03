@@ -1,1 +1,1 @@
-web: flask db upgrade; export TMP_START_BOT=true; gunicorn autobase:app
+web: flask db upgrade; gunicorn autobase:app

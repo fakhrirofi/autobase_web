@@ -1,4 +1,4 @@
-from .. import db
+from .. import app, db
 from ..models import User
 from . import auth
 from .forms import (
@@ -50,7 +50,7 @@ def register():
     if current_user.is_authenticated:
         return redirect(url_for('dashboard', app_name=''))
     
-    form = RegistrationForm(register_token=auth.config['REGISTER_TOKEN'])
+    form = RegistrationForm(register_token=app.config['REGISTER_TOKEN'])
     if form.validate_on_submit():
         user = User(username=form.username.data)
         user.set_password(form.password.data)

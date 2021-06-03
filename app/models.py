@@ -5,6 +5,10 @@ from werkzeug.security import (
     generate_password_hash
 )
 
+# class Application(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     autobase_url = db.Column(db.String(64))
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
