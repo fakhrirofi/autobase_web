@@ -9,7 +9,7 @@ Website to control [twitter_autobase](https://github.com/fakhrirofi/twitter_auto
 - Integrate with twitter_autobase
     * bridge between database and Autobase object
     * save twitter_autobase ngrok url to database
-    * send trigger with requests.post to ngrok url
+    * send trigger with requests.post to twitter_autobase ngrok url
     * Re-code twitter_autobase starter (follow main.py)
 
 
